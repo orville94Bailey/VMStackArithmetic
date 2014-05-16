@@ -211,11 +211,19 @@ Command_Type Parser::commandType()
 
 std::string Parser::arg1()
 {
-    std::string arithmeticCommand;
+    std::string arithmeticCommand = "";
+    int position=0;
     Command_Type currentCommandType;
     currentCommandType = commandType();
+
     if (currentCommandType==C_ARITHMETIC)
     {
-        currentCommand;
+        while(currentCommand[position]!= ' ')
+        {
+            arithmeticCommand = arithmeticCommand
+                                + currentCommand[position];
+            position++;
+        }
+        return arithmeticCommand;
     }
 }
